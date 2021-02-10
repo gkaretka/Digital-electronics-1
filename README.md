@@ -42,8 +42,13 @@ entity gates is
         p4_o	: out std_logic;		-- x and x and x	= x
         
         -- lab 2 distributie law
-        d1_o	: out std_logic;		-- x and y or x and z = x and (y or z)
-        d2_o	: out std_logic			-- (x or y) and (x or z) = x or (y and z)
+        -- x and y or x and z = x and (y or z)
+        d11_o	: out std_logic;		-- x and y or x and z 
+        d12_o	: out std_logic;		-- x and (y or z)
+        
+        -- (x or y) and (x or z) = x or (y and z)
+        d21_o	: out std_logic;		-- (x or y) and (x or z)
+        d22_o	: out std_logic			-- x or (y and z)
         
     );
 end entity gates;
@@ -56,18 +61,18 @@ begin
 	f1_o		<= ((not b_i) and a_i) or ((not c_i) and (not b_i));					-- original
 	for_o		<= (not (b_i or (not a_i))) or (not (c_i or b_i));						-- or only
 	fand_o		<= not ((not ((not b_i) and a_i)) and not ((not c_i) and (not b_i)));	-- and only
-end architecture dataflow;
 
-architecture boolean_check of gates is
-begin
-	p1_o		<= x and (not x));
-    p2_0		<= x or (not x);
-    p3_o		<= x or x or x;
-    p4_o		<= x and x and x;
+	p1_o		<= a_i and (not a_i);
+    p2_o		<= a_i or (not a_i);
+    p3_o		<= a_i or a_i or a_i;
+    p4_o		<= a_i and a_i and a_i;
     
-    d1_o		<= x and y or x and z = x and (y or z);
-    d2_o		<= (x or y) and (x or z) = x or (y and z);
-end architecture boolean_check
+    d11_o		<= (a_i and b_i) or (a_i and c_i);
+    d12_o		<= a_i and (b_i or c_i);
+    
+    d21_o		<= (a_i or b_i) and (a_i or c_i);
+    d22_o		<= a_i or (b_i and c_i);
+end architecture dataflow;
 ```
 
 ### Waveform
