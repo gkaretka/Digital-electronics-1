@@ -1,5 +1,9 @@
 # Digital-electronics-1
 
+## My GitHub repository
+
+[Digital-electronics-1](https://github.com/gkaretka/Digital-electronics-1)
+
 ## Lab assignment 2)
 
 ### Truth table
