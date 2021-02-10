@@ -80,9 +80,9 @@ IN:
 s_a, s_b, s_c
 
 OUT:
-f1_o    -- is the original function given using and/or/not.
-for_o   -- is function using only or/not
-fand_o  -- is function using only and/not
+* f1_o    -- is the original function given using and/or/not.
+* for_o   -- is function using only or/not
+* fand_o  -- is function using only and/not
 
 ![waveform](Labs/01-tools/cap1.PNG)
 
@@ -96,10 +96,10 @@ IN:
 s_a as variable **x**
 
 OUT:
-p1: x and ~x        = 0
-p2: x or ~x         = 1
-p3: x or x or x     = x
-p4: x and x and x	= x
+* p1: x and ~x        = 0
+* p2: x or ~x         = 1
+* p3: x or x or x     = x
+* p4: x and x and x	= x
 
 ![waveform](Labs/01-tools/cap2.PNG)
 
@@ -110,10 +110,10 @@ IN:
 s_a, s_b, s_c as **x**, **y**, **z**
 
 OUT:
-d11: x and y or x and z
-d12: x and (y or z) 
+* d11: x and y or x and z
+* d12: x and (y or z) 
 
-d21: (x or y) and (x or z)
-d22: x or (y and z)
+* d21: (x or y) and (x or z)
+* d22: x or (y and z)
 
 ![waveform](Labs/01-tools/cap3.PNG)
