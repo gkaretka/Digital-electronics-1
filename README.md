@@ -26,13 +26,25 @@ use ieee.std_logic_1164.all;-- Package for data types and logic operations
 ------------------------------------------------------------------------
 entity gates is
     port(
-        a_i    : in  std_logic;     -- Data input
-        b_i    : in  std_logic;    	-- Data input
-        c_i	   : in  std_logic;		-- Data input
+        a_i    	: in  std_logic;     	-- Data input
+        b_i    	: in  std_logic;    	-- Data input
+        c_i	   	: in  std_logic;		-- Data input
         
-        f1_o   : out std_logic;
-        fand_o : out std_logic;
-        for_o  : out std_logic
+        -- lab 1
+        f1_o   	: out std_logic;		-- Fout original
+        fand_o 	: out std_logic;		-- F with only AND/NOT
+        for_o  	: out std_logic;		-- F with only OR/NOT
+        
+        -- lab 2 postulates
+        p1_o	: out std_logic;		-- x and ~x			= 0
+        p2_o	: out std_logic;		-- x or ~x			= 1
+        p3_o	: out std_logic;		-- x or x or x		= x
+        p4_o	: out std_logic;		-- x and x and x	= x
+        
+        -- lab 2 distributie law
+        d1_o	: out std_logic;		-- x and y or x and z = x and (y or z)
+        d2_o	: out std_logic			-- (x or y) and (x or z) = x or (y and z)
+        
     );
 end entity gates;
 
@@ -41,11 +53,21 @@ end entity gates;
 ------------------------------------------------------------------------
 architecture dataflow of gates is
 begin
-    f1_o 		<= ((not b_i) and a_i) or ((not c_i) and (not b_i)); 					-- original
-    for_o		<= (not (b_i or (not a_i))) or (not (c_i or b_i));	 					-- or only
-    fand_o		<= not ((not ((not b_i) and a_i)) and not ((not c_i) and (not b_i))); 	-- and only
+	f1_o		<= ((not b_i) and a_i) or ((not c_i) and (not b_i));					-- original
+	for_o		<= (not (b_i or (not a_i))) or (not (c_i or b_i));						-- or only
+	fand_o		<= not ((not ((not b_i) and a_i)) and not ((not c_i) and (not b_i)));	-- and only
 end architecture dataflow;
 
+architecture boolean_check of gates is
+begin
+	p1_o		<= x and (not x));
+    p2_0		<= x or (not x);
+    p3_o		<= x or x or x;
+    p4_o		<= x and x and x;
+    
+    d1_o		<= x and y or x and z = x and (y or z);
+    d2_o		<= (x or y) and (x or z) = x or (y and z);
+end architecture boolean_check
 ```
 
 ### Waveform
@@ -62,3 +84,31 @@ fand_o  -- is function using only and/not
 [link to EDA Playground](https://www.edaplayground.com/x/v9TN)
 
 ## Lab assignment 3)
+
+### Boolean postulates waveform
+
+IN:
+s_a as variable **x**
+
+OUT:
+p1: x and ~x        = 0
+p2: x or ~x         = 1
+p3: x or x or x     = x
+p4: x and x and x	= x
+
+![waveform](Labs/01-tools/cap2.PNG)
+
+
+### Distributie laws waveform
+
+IN:
+s_a, s_b, s_c as **x**, **y**, **z**
+
+OUT:
+d11: x and y or x and z
+d12: x and (y or z) 
+
+d21: (x or y) and (x or z)
+d22: x or (y and z)
+
+![waveform](Labs/01-tools/cap3.PNG)
