@@ -41,7 +41,7 @@ entity gates is
         p3_o	: out std_logic;		-- x or x or x		= x
         p4_o	: out std_logic;		-- x and x and x	= x
         
-        -- lab 2 distributie law
+        -- lab 2 distributie laws
         -- x and y or x and z = x and (y or z)
         d11_o	: out std_logic;		-- x and y or x and z 
         d12_o	: out std_logic;		-- x and (y or z)
@@ -62,16 +62,18 @@ begin
 	for_o		<= (not (b_i or (not a_i))) or (not (c_i or b_i));						-- or only
 	fand_o		<= not ((not ((not b_i) and a_i)) and not ((not c_i) and (not b_i)));	-- and only
 
-	p1_o		<= a_i and (not a_i);
-    p2_o		<= a_i or (not a_i);
-    p3_o		<= a_i or a_i or a_i;
-    p4_o		<= a_i and a_i and a_i;
+	p1_o		<= a_i and (not a_i);		-- x and ~x			= 0
+    p2_o		<= a_i or (not a_i);		-- x or ~x			= 1
+    p3_o		<= a_i or a_i or a_i;		-- x or x or x 		= x
+    p4_o		<= a_i and a_i and a_i;		-- x and x and x	= x
     
-    d11_o		<= (a_i and b_i) or (a_i and c_i);
-    d12_o		<= a_i and (b_i or c_i);
+	-- x and y or x and z = x and (y or z)
+    d11_o		<= (a_i and b_i) or (a_i and c_i);  -- x and y or x and z 
+    d12_o		<= a_i and (b_i or c_i);			-- x and (y or z)
     
-    d21_o		<= (a_i or b_i) and (a_i or c_i);
-    d22_o		<= a_i or (b_i and c_i);
+	-- (x or y) and (x or z) = x or (y and z)
+    d21_o		<= (a_i or b_i) and (a_i or c_i);	-- (x or y) and (x or z)
+    d22_o		<= a_i or (b_i and c_i);			-- x or (y and z)
 end architecture dataflow;
 ```
 
