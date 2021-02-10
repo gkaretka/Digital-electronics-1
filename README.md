@@ -84,7 +84,7 @@ OUT:
 * for_o   -- is function using only or/not
 * fand_o  -- is function using only and/not
 
-![waveform](Labs/01-tools/cap1.PNG)
+![waveform 1](Labs/01-tools/cap1.PNG)
 
 [link to EDA Playground](https://www.edaplayground.com/x/v9TN)
 
@@ -101,7 +101,7 @@ OUT:
 * p3: x or x or x     = x
 * p4: x and x and x	= x
 
-![waveform](Labs/01-tools/cap2.PNG)
+![waveform 2](Labs/01-tools/cap2.PNG)
 
 
 ### Distributie laws waveform
@@ -116,4 +116,6 @@ OUT:
 * d21: (x or y) and (x or z)
 * d22: x or (y and z)
 
-![waveform](Labs/01-tools/cap3.PNG)
+![waveform 3](Labs/01-tools/cap3.PNG)
+
+[link to EDA Playground](https://www.edaplayground.com/x/v9TN)
