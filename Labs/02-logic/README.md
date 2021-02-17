@@ -55,15 +55,35 @@ bgta_pos = (b1 + b0 + a1 + a0) * (b1 + b0 + a1 + ~a0) * (b1 + ~b0 + ~a1 + a0) * 
 | 11 | 1 | 1 |   | 1 |
 | 10 | 1 | 1 |   |   |
 
-- first group is 12, 13, 8, 9
-B1 * ~A1
+- first group is 12, 13, 8, 9: B1 * ~A1
 
-- second group is 14, 12
-B1 * B0 * ~A0
+- second group is 14, 12: B1 * B0 * ~A0
 
-- third group is 12, 4
-B0 * ~A0 * ~A1
+- third group is 12, 4: B0 * ~A0 * ~A1
 
 ```verilog
 eq = (B1 * ~A1) + (B1 * B0 * ~A0) + (B0 * ~A0 * ~A1)
+```
+
+### A > B
+
+| x  | 00 | 01 | 11 | 10 |
+| :-: | :-: | :-: | :-: | :-: |
+| 00 | 0 |   |   |   |
+| 01 | 0 | 0 |   |   |
+| 11 | 0 | 0 | 0 | 0 |
+| 10 | 0 | 0 |   | 0 |
+
+- first group is 12, 13, 8, 9: ~B1 + A1
+
+- second group is 4, 5, 12, 13: ~B0 + A1
+
+- third group is 0, 4, 8, 12: A0 + A1
+
+- fourth group is 12, 13, 14, 15: ~B1 + ~B0
+
+- fifth ground is 8, 12, 10, 14: ~B1 + A0
+
+```verilog
+eq = (~B1 + A1) * (~B0 + A1) * (A0 + A1) * (~B1 + ~B0) * (~B1 + A0)
 ```
