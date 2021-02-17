@@ -177,6 +177,7 @@ begin
     variable range_of_rand : real := 15.0;
     begin
     	
+        -- change for different values
         seed1 := 24156461;
         seed2 := 45646546;
         
