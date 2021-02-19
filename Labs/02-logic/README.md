@@ -35,7 +35,7 @@ bgta_pos = (b1 + b0 + a1 + a0) * (b1 + b0 + a1 + ~a0) * (b1 + ~b0 + ~a1 + a0) * 
             (b1 + ~b0 + a1 + ~a0) * (b1 + ~b0 + ~a1 + ~a0) * (~b1 + b0 + ~a1 + a0) * (~b1 + b0 + ~a1 + ~a0) * (~b1 + ~b0 + ~a1 + ~a0);
 ```
 
-## K-maps
+## K-maps of 2-bit comparator
 
 ### indexes
 
@@ -96,6 +96,8 @@ eq = (B1 * ~A1) + (B1 * B0 * ~A0) + (B0 * ~A0 * ~A1)
 ```verilog
 eq = (~B1 + A1) * (~B0 + A1) * (A0 + A1) * (~B1 + ~B0) * (~B1 + A0)
 ```
+
+[EDA playground 2-bit comparator with TB](https://www.edaplayground.com/x/Yucx)
 
 ## 4-bit comparator code
 
@@ -265,4 +267,4 @@ Finding VCD file...
 Done
 ```
 
-[EDA playground](https://www.edaplayground.com/x/RD2x)
+[EDA playground 4-bit comparatro with TB](https://www.edaplayground.com/x/RD2x)
