@@ -10,6 +10,8 @@
 
 ![Schematic of used HW](img/schematic.PNG)
 
+### XDC file
+
 ```vhdl
 ## Switches
 set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { a_i[0] }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
@@ -180,9 +182,11 @@ begin
 end architecture testbench;
 ```
 
-![Waveform of simulation](/img/schematic.PNG)
+![Waveform of simulation](img/schematic.PNG)
 
-[![test](http://img.youtube.com/vi/QcRgVIGiRpU/0.jpg)](http://www.youtube.com/watch?v=QcRgVIGiRpU "Demonstracia")
+### Test on my Nexys 4 DDR
+
+[![test](http://img.youtube.com/vi/QcRgVIGiRpU/0.jpg)](http://www.youtube.com/watch?v=QcRgVIGiRpU "Test on my Nexys 4 DDR")
 
 ```bash
 Note: Stimulus process started. ---------------------------------------
@@ -200,12 +204,35 @@ A Vivado tutorial. Submit:
 
 Your tutorial for Vivado design flow: project creation, adding source file, adding testbench file, adding XDC constraints file, running simulation.
 
-![ct1](/img/ct1.PNG)
-![ct2](/img/ct2.PNG)
-![ct3](/img/ct3.PNG)
-![ct4](/img/ct4.PNG)
-![ct5](/img/ct5.PNG)
-![ct6](/img/ct6.PNG)
-![ct7](/img/ct7.PNG)
-![ct8](/img/ct8.PNG)
+If we want to create project. We need to select File -> Project -> New...
+
+![ct1](img/ct1.PNG)
+
+Window pop up. We proceed by clicking Next.
+
+![ct2](img/ct2.PNG)
+
+Here name our project and select our project location.
+
+![ct3](img/ct3.PNG)
+
+Here we select RTL Project since we are doing RTL design.
+
+![ct4](img/ct4.PNG)
+
+Here we can add/create sources for our project. We can add HDL and simulation files (VHDL, Verilog), and IP we want to use in our project.
+
+![ct5](img/ct5.PNG)
+
+Here we can add physical and timing constrains and for our board.
+
+![ct6](img/ct6.PNG)
+
+Here we select our part (we select IC we are using on our board/proprietary board) or we select board and pick from existing dev kits (eg. Nexys 7, Nexys 4 DDR, etc.)
+
+![ct7](img/ct7.PNG)
+
+In the last step we check all setting we provided and click Finish to create project or we can go back (by clicking Back) and we can make changes.
+
+![ct8](img/ct8.PNG)
 
