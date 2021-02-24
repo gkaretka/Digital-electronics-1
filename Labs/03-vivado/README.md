@@ -8,7 +8,7 @@
 
 ### Preparation tasks (using my Nexys 4 DDR):
 
-![Schematic of used HW](/img/schematic.PNG)
+![Schematic of used HW](img/schematic.PNG)
 
 ```vhdl
 ## Switches
@@ -182,7 +182,7 @@ end architecture testbench;
 
 ![Waveform of simulation](/img/schematic.PNG)
 
-[<iframe width="560" height="315" src="https://www.youtube.com/embed/QcRgVIGiRpU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>](https://youtu.be/QcRgVIGiRpU)
+[![test](http://img.youtube.com/vi/QcRgVIGiRpU/0.jpg)](http://www.youtube.com/watch?v=QcRgVIGiRpU "Demonstracia")
 
 ```bash
 Note: Stimulus process started. ---------------------------------------
@@ -196,4 +196,16 @@ Note: Stimulus process finished. ---------------------------------------
 
 A Vivado tutorial. Submit:
 
+# Tutorial (how to setup project in vivado, adding sources/tb files/constrains and running simulation)
+
 Your tutorial for Vivado design flow: project creation, adding source file, adding testbench file, adding XDC constraints file, running simulation.
+
+![ct1](/img/ct1.PNG)
+![ct2](/img/ct2.PNG)
+![ct3](/img/ct3.PNG)
+![ct4](/img/ct4.PNG)
+![ct5](/img/ct5.PNG)
+![ct6](/img/ct6.PNG)
+![ct7](/img/ct7.PNG)
+![ct8](/img/ct8.PNG)
+
