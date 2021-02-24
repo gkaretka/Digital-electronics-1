@@ -182,7 +182,7 @@ begin
 end architecture testbench;
 ```
 
-![Waveform of simulation](img/schematic.PNG)
+![Waveform of simulation](img/wf.PNG)
 
 ### Test on my Nexys 4 DDR
 
