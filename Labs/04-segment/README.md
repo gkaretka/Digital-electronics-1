@@ -305,3 +305,30 @@ begin
 end Behavioral;
 
 ```
+
+### LED[7:4] truth table
+
+| **Hex** | **Inputs** | **LED[7]** | **LED[6]** | **LED[5]** | **LED[4]** |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0000 | 0 | 0 | 0 | 1 |
+| 1 | 0001 | 1 | 1 | 0 | 0 |
+| 2 | 0010 | 1 | 0 | 1 | 0 |
+| 3 | 0011 | 0 | 1 | 0 | 0 |
+| 4 | 0100 | 1 | 0 | 0 | 0 |
+| 5 | 0101 | 0 | 1 | 0 | 0 |
+| 6 | 0110 | 0 | 0 | 0 | 0 |
+| 7 | 0111 | 0 | 1 | 0 | 0 |
+| 8 | 1000 | 1 | 0 | 0 | 0 |
+| 9 | 1001 | 0 | 1 | 0 | 0 |
+| A | 1010 | 0 | 0 | 1 | 0 |
+| b | 1011 | 0 | 1 | 1 | 0 |
+| C | 1100 | 0 | 0 | 1 | 0 |
+| d | 1101 | 0 | 1 | 1 | 0 |
+| E | 1110 | 0 | 0 | 1 | 0 |
+| F | 1111 | 0 | 1 | 1 | 0 |
+
+![Waveform of simulation](img/wf2.PNG)
+
+### Test on my Nexys 4 DDR
+
+[![test](http://img.youtube.com/vi/Rohj0r7xT4c/0.jpg)](http://www.youtube.com/watch?v=Rohj0r7xT4c "Test on my Nexys 4 DDR")
