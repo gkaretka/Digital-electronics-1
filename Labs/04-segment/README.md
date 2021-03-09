@@ -285,6 +285,7 @@ begin
     CF  <= s_seg_o(1);
     CG  <= s_seg_o(0);
     
+    -- DEBUG: Display segments that are turned on
     LED(15 downto 9)    <= not s_seg_o;
 
     -- Display input value LED
