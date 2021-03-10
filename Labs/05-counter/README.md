@@ -257,3 +257,7 @@ end architecture Behavioral;
 ### 16-bit and 4-bit counter flow chart
 
 ![4bit counter closeup waveform](img/16bit_4bit_counter.PNG)
+
+### Test on my Nexys 4 DDR
+
+[![test](http://img.youtube.com/vi/TLhBoTNzqtU/0.jpg)](http://www.youtube.com/watch?v=TLhBoTNzqtU "Test on my Nexys 4 DDR")
