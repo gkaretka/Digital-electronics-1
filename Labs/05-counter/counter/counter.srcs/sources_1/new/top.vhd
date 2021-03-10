@@ -122,7 +122,7 @@ begin
             clk         =>  CLK100MHZ,
             reset       =>  BTND,
             en_i        =>  s_en_16b,
-            cnt_up_i    =>  SW(0),
+            cnt_up_i    =>  SW(1),
             cnt_o       =>  s_cnt_16b
         );
 
