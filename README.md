@@ -11,3 +11,5 @@
 [Lab-03](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/03-vivado)
 
 [Lab-04](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/04-segment)
+
+[Lab-05](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/05-counter)

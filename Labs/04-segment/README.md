@@ -4,7 +4,7 @@
 
 [Digital-electronics-1](https://github.com/gkaretka/Digital-electronics-1)
 
-## Lab assignment 3)
+## Lab assignment 4)
 
 ### Preparation tasks (using my Nexys 4 DDR):
 
