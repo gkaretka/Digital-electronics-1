@@ -46,7 +46,6 @@ begin
     p_clk_ena : process(clk)
     begin
         if rising_edge(clk) then        -- Synchronous process
-
             if (reset = '1') then       -- High active reset
                 s_cnt_local <= 0;       -- Clear local counter
                 ce_o        <= '0';     -- Set output to low
