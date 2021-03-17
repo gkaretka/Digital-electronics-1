@@ -13,3 +13,5 @@
 [Lab-04-segment](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/04-segment)
 
 [Lab-05-counter](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/05-counter)
+
+[Lab-06-display_driver](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/06-display_driver)
