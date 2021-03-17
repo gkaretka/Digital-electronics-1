@@ -280,6 +280,10 @@ end architecture Behavioral;
 
 ![Waveform](img/8segments.png)
 
-### Test on my Nexys 4 DDR
+### Test off this task on my Nexys 4 DDR (display 3.142)
 
 [![test](http://img.youtube.com/vi/V2Tf9NELBbA/0.jpg)](http://www.youtube.com/watch?v=V2Tf9NELBbA "Test on my Nexys 4 DDR")
+
+### Test on my Nexys 4 DDR (last task, two counters)
+
+[![test](http://img.youtube.com/vi/TLhBoTNzqtU/0.jpg)](http://www.youtube.com/watch?v=TLhBoTNzqtU "Test on my Nexys 4 DDR")
