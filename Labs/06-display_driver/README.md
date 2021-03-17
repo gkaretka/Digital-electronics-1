@@ -284,6 +284,6 @@ end architecture Behavioral;
 
 [![test](http://img.youtube.com/vi/V2Tf9NELBbA/0.jpg)](http://www.youtube.com/watch?v=V2Tf9NELBbA "Test on my Nexys 4 DDR")
 
-### Test on my Nexys 4 DDR (last task, two counters)
+### Test on my Nexys 4 DDR (previous task, two counters)
 
 [![test](http://img.youtube.com/vi/TLhBoTNzqtU/0.jpg)](http://www.youtube.com/watch?v=TLhBoTNzqtU "Test on my Nexys 4 DDR")
