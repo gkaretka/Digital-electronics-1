@@ -15,3 +15,5 @@
 [Lab-05-counter](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/05-counter)
 
 [Lab-06-display_driver](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/06-display_driver)
+
+[Lab-07-flip-flops](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/07-ffs)
