@@ -162,7 +162,7 @@ p_d_latch : process(en, d, arst)
         wait for 20ns;
         s_d     <=  '1';
         wait for 10ns;
-        assert (s_q = '0' and s_q_bar = '1') report "Failed 4" severity note;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 5" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;
@@ -243,7 +243,7 @@ p_d_latch : process(en, d, arst)
         wait for 20ns;
         s_d     <=  '1';
         wait for 25ns;
-        assert (s_q = '1' and s_q_bar = '0') report "Failed 4" severity note;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 5" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;
@@ -293,6 +293,19 @@ begin
 #### Testbench (reset process and stimulus)
 
 ```vhdl
+    --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------
+    p_reset_gen : process
+    begin
+        s_rst   <= '0';
+        wait for 100 ns;
+        s_rst   <= '1';                 -- Reset activated
+        wait for 80 ns;
+        s_rst   <= '0';
+        wait;
+    end process p_reset_gen;
+
     p_stimulus : process
     begin
         -- Report a note at the begining of stimulus process
@@ -302,45 +315,49 @@ begin
         s_j <=  '1';
         s_k <=  '0'; 
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 1" severity note;
         
         -- Reset 1
         s_j <=  '0';
         s_k <=  '1';
         wait for 10ns;
-        
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 2" severity note;
+                
         -- Set 2
         s_j <=  '1';
         s_k <=  '0';
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 3" severity note;
         
         -- Reset 2
         s_j <=  '0';
         s_k <=  '1';    
         wait for 10ns;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 4" severity note;
         
         -- Toggle 1
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 5" severity note;
         
         -- Toggle 2
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 6" severity note;
         
         -- Toggle 3
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;        
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 7" severity note;
         
         -- No change 1
         s_j <=  '0';
         s_k <=  '0';
         wait for 10ns;
-        
-        -- No change 1
-        s_j <=  '0';
-        s_k <=  '0';
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 8" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;
@@ -439,5 +456,7 @@ end Behavioral;
 ![Shift register schematic](img/shift_register.PNG)
 
 ### Test on my Nexys 4 DDR
+
+I used BTNU directly as a clock source. This is highly discouraged but in this example for demonstation pourpouses is tolerated. This is also the main source of glitches you can see in the video.
 
 [![test](http://img.youtube.com/vi/IWPyYpp15K4/0.jpg)](http://www.youtube.com/watch?v=IWPyYpp15K4 "Test on my Nexys 4 DDR")

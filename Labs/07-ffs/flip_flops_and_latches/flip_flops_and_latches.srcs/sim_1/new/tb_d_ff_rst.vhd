@@ -104,7 +104,7 @@ begin
         wait for 20ns;
         s_d     <=  '1';
         wait for 25ns;
-        assert (s_q = '1' and s_q_bar = '0') report "Failed 4" severity note;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 5" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;

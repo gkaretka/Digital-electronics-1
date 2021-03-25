@@ -91,45 +91,49 @@ uut_d_ff_arst : entity work.jk_ff_rst
         s_j <=  '1';
         s_k <=  '0'; 
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 1" severity note;
         
         -- Reset 1
         s_j <=  '0';
         s_k <=  '1';
         wait for 10ns;
-        
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 2" severity note;
+                
         -- Set 2
         s_j <=  '1';
         s_k <=  '0';
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 3" severity note;
         
         -- Reset 2
         s_j <=  '0';
         s_k <=  '1';    
         wait for 10ns;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 4" severity note;
         
         -- Toggle 1
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 5" severity note;
         
         -- Toggle 2
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 6" severity note;
         
         -- Toggle 3
         s_j <=  '1';
         s_k <=  '1';
         wait for 10ns;        
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 7" severity note;
         
         -- No change 1
         s_j <=  '0';
         s_k <=  '0';
         wait for 10ns;
-        
-        -- No change 1
-        s_j <=  '0';
-        s_k <=  '0';
+        assert (s_q = '1' and s_q_bar = '0') report "Failed 8" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;

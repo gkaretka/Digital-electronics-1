@@ -104,7 +104,7 @@ uut_d_ff_arst : entity work.d_ff_arst
         wait for 20ns;
         s_d     <=  '1';
         wait for 10ns;
-        assert (s_q = '0' and s_q_bar = '1') report "Failed 4" severity note;
+        assert (s_q = '0' and s_q_bar = '1') report "Failed 5" severity note;
         
         report "Stimulus process ended. ---------------------------------------" severity note;
         wait;
