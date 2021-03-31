@@ -457,6 +457,6 @@ end Behavioral;
 
 ### Test on my Nexys 4 DDR
 
-I used BTNU directly as a clock source. This is highly discouraged but in this example for demonstation pourpouses is tolerated. This is also the main source of glitches you can see in the video.
+I used BTNU directly as a clock source. This is highly discouraged but in this example for demonstation pourpouses is tolerated. Proper way would be to sample BTNU with clock (and using some deglitch/debounce algorithm) but this would require flip flop code to be modified. This is also the main source of glitches you can see in the video.
 
 [![test](http://img.youtube.com/vi/IWPyYpp15K4/0.jpg)](http://www.youtube.com/watch?v=IWPyYpp15K4 "Test on my Nexys 4 DDR")
