@@ -99,7 +99,11 @@ begin
                         if (unsigned(s_cnt) < c_DELAY_4SEC) then
                             s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
                         else
-                            s_state <= WEST_WAIT;
+                            if (sens_w = '1' and sens_s = '0') then  
+                                s_state <= WEST_GO;
+                            else
+                                s_state <= WEST_WAIT;
+                            end if;
                             s_cnt   <= std_logic_vector(c_ZERO);
                         end if;
                         
@@ -123,7 +127,12 @@ begin
                         if (unsigned(s_cnt) < c_DELAY_4SEC) then
                             s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
                         else
-                            s_state <= SOUTH_WAIT;
+                            if (sens_w = '0' and sens_s = '1') then  
+                                s_state <= SOUTH_GO;
+                            else
+                                s_state <= SOUTH_WAIT;
+                            end if;
+                            
                             s_cnt   <= std_logic_vector(c_ZERO);
                         end if;
                         

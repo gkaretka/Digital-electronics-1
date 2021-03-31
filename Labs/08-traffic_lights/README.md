@@ -137,3 +137,96 @@ See schematic or reference manual of the Nexys board and find out the connection
 ![Waveform 1](img/wf_1.PNG)
 
 ![Waveform 2](img/wf_2.PNG)
+
+### Smart traffic light
+
+![State Table](img/state_table.PNG)
+
+![State diagram](img/state_diagram.PNG)
+
+```vhdl
+p_traffic_fsm : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then       -- Synchronous reset
+                s_state <= STOP1 ;      -- Set initial state
+                s_cnt   <= std_logic_vector(c_ZERO);      -- Clear all bits
+
+            elsif (s_en = '1') then
+                -- Every 250 ms, CASE checks the value of the s_state 
+                -- variable and changes to the next state according 
+                -- to the delay value.
+                case s_state is
+                    -- If the current state is STOP1, then wait 1 sec
+                    -- and move to the next GO_WAIT state.
+                    when STOP1 =>
+                        -- Count up to c_DELAY_1SEC
+                        if (unsigned(s_cnt) < c_DELAY_1SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            -- Move to the next state
+                            s_state <= WEST_GO;
+                            -- Reset local counter value
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+
+                    when WEST_GO =>
+                        if (unsigned(s_cnt) < c_DELAY_4SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            if (sens_w = '1' and sens_s = '0') then  
+                                s_state <= WEST_GO;
+                            else
+                                s_state <= WEST_WAIT;
+                            end if;
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+                        
+                    when WEST_WAIT =>
+                        if (unsigned(s_cnt) < c_DELAY_2SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            s_state <= STOP2;
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+                        
+                    when STOP2 =>
+                        if (unsigned(s_cnt) < c_DELAY_1SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            s_state <= SOUTH_GO;
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+                        
+                    when SOUTH_GO =>
+                        if (unsigned(s_cnt) < c_DELAY_4SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            if (sens_w = '0' and sens_s = '1') then  
+                                s_state <= SOUTH_GO;
+                            else
+                                s_state <= SOUTH_WAIT;
+                            end if;
+                            
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+                        
+                    when SOUTH_WAIT =>
+                        if (unsigned(s_cnt) < c_DELAY_2SEC) then
+                            s_cnt <= std_logic_vector(unsigned(s_cnt) + 1);
+                        else
+                            s_state <= STOP1;
+                            s_cnt   <= std_logic_vector(c_ZERO);
+                        end if;
+                    
+                    -- It is a good programming practice to use the 
+                    -- OTHERS clause, even if all CASE choices have 
+                    -- been made. 
+                    when others =>
+                        s_state <= STOP1;
+
+                end case;
+            end if; -- Synchronous reset
+        end if; -- Rising edge
+    end process p_traffic_fsm;
+```
