@@ -17,3 +17,5 @@
 [Lab-06-display_driver](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/06-display_driver)
 
 [Lab-07-flip-flops](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/07-ffs)
+
+[Lab-08-traffic_lights](https://github.com/gkaretka/Digital-electronics-1/tree/main/Labs/08-traffic_lights)
