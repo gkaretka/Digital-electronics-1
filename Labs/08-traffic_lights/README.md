@@ -140,7 +140,7 @@ See schematic or reference manual of the Nexys board and find out the connection
 
 ### Smart traffic light
 
-| **Current state** | **Direction South** | **Direction West** | **Delay** | **Input (clock, sensor_west, sensor_south)** |
+| **Current state** | **Direction South** | **Direction West** | **Delay** | **Input (counter_en, sensor_west, sensor_south)** |
 | :-- | :-: | :-: | :-: | :-: |
 | `STOP1`      | red    | red | 1 sec | n/c |
 | `WEST_GO`    | red    | green | 4 sec | 1,1,0 or 0, X, X goto WEST_GO else goto WEST_WAIT |
@@ -149,9 +149,7 @@ See schematic or reference manual of the Nexys board and find out the connection
 | `SOUTH_GO`   | green  | red | 4 sec | 1,0,1 or 0, X, X goto SOUTH_GO else goto SOUTH_WAIT |
 | `SOUTH_WAIT` | yellow | red | 2 sec | n/c |
 
-Input data:
-counter_enable, sensor_west, sensor_south
-
+**Input data format: counter_en, sensor_west, sensor_south**
 
 ![State diagram](img/state_diagram.PNG)
 
