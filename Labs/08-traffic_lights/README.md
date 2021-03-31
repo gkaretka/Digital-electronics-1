@@ -239,3 +239,7 @@ p_traffic_fsm : process(clk)
         end if; -- Rising edge
     end process p_traffic_fsm;
 ```
+
+### Test on my Nexys 4 DDR
+
+[![test](http://img.youtube.com/vi/1So-_y_ES4Y/0.jpg)](http://www.youtube.com/watch?v=1So-_y_ES4Y "Test on my Nexys 4 DDR")
