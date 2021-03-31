@@ -20,6 +20,13 @@ See schematic or reference manual of the Nexys board and find out the connection
 
 ![schematic](img/nexys4ddr_schematic.PNG)
 
+Figure with connection of RGB LEDs on Nexys A7 board and completed table with color settings.
+
+| **RGB LED** | **Artix-7 pin names** | **Red** | **Yellow** | **Green** |
+| :-: | :-: | :-: | :-: | :-: |
+| LD16 | N15, M16, R12 | `1,0,0` | `1,1,0` | `0,1,0` |
+| LD17 | N16, R11, G14 | `1,0,0` | `1,1,0` | `0,1,0` |
+
 ### 2) Traffic light controller
 
 ```vhdl
