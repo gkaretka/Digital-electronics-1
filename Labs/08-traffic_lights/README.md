@@ -18,7 +18,7 @@ Fill in the table with the state names and output values accoding to the given i
 
 See schematic or reference manual of the Nexys board and find out the connection of two RGB LEDs. How you can control them to get red, yellow, or green colors?
 
-![schematic](img/nexys4ddr_schematic.png)
+![schematic](img/nexys4ddr_schematic.PNG)
 
 ### 2) Traffic light controller
 
@@ -134,6 +134,6 @@ See schematic or reference manual of the Nexys board and find out the connection
     end process p_output_fsm;
 ```
 
-![schematic](img/wf_1.png)
+![Waveform 1](img/wf_1.PNG)
 
-![schematic](img/wf_2.png)
+![Waveform 2](img/wf_2.PNG)
