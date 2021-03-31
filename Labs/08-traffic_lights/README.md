@@ -142,6 +142,10 @@ See schematic or reference manual of the Nexys board and find out the connection
 
 ![State Table](img/state_table.PNG)
 
+Input data:
+counter_enable, sensor_west, sensor_south
+
+
 ![State diagram](img/state_diagram.PNG)
 
 ```vhdl
