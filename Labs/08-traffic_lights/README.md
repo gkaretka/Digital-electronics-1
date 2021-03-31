@@ -113,7 +113,7 @@ See schematic or reference manual of the Nexys board and find out the connection
                 
             when WEST_WAIT =>
                 south_o <= "100";   -- Red (RGB = 100)
-                west_o  <= "110";   -- Red (RGB = 011)
+                west_o  <= "110";   -- Red (RGB = 110)
             
             when STOP2 =>
                 south_o <= "100";   -- Red (RGB = 100)
@@ -124,7 +124,7 @@ See schematic or reference manual of the Nexys board and find out the connection
                 west_o  <= "100";   -- Red (RGB = 100)
                 
             when SOUTH_WAIT =>
-                south_o <= "110";   -- Red (RGB = 011)
+                south_o <= "110";   -- Red (RGB = 110)
                 west_o  <= "100";   -- Red (RGB = 100)                
 
             when others =>

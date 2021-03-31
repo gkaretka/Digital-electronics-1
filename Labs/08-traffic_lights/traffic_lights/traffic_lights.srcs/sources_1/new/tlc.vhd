@@ -37,6 +37,9 @@ entity tlc is
     clk     :   in  std_logic;
     reset   :   in  std_logic;
     
+    sens_s  :   in  std_logic;
+    sens_w  :   in std_logic;
+    
     south_o :   out std_logic_vector(3 - 1 downto 0);
     west_o  :   out std_logic_vector(3 - 1 downto 0)
     );
@@ -79,7 +82,6 @@ begin
                 -- variable and changes to the next state according 
                 -- to the delay value.
                 case s_state is
-
                     -- If the current state is STOP1, then wait 1 sec
                     -- and move to the next GO_WAIT state.
                     when STOP1 =>
