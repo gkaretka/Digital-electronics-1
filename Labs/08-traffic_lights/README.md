@@ -29,6 +29,8 @@ Figure with connection of RGB LEDs on Nexys A7 board and completed table with co
 
 ### 2) Traffic light controller
 
+![State diagram](img/state_diagram_1.PNG)
+
 ```vhdl
     p_traffic_fsm : process(clk)
     begin
@@ -158,7 +160,7 @@ Figure with connection of RGB LEDs on Nexys A7 board and completed table with co
 
 **Input data format: counter_en, sensor_west, sensor_south**
 
-![State diagram](img/state_diagram.PNG)
+![State diagram](img/state_diagram_2.PNG)
 
 ```vhdl
 p_traffic_fsm : process(clk)
